@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مصرفيه</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>مصرفيه</h1>
+        <p>حوّل عملتك بسهولة أثناء السفر</p>
+    </header>
+    <main>
+        <div class="converter-card">
+            <input type="number" id="amount" placeholder="المبلغ" value="100" />
+            <select id="from-currency">
+                <option value="USD">الدولار الأمريكي (USD)</option>
+                <option value="SAR">الريال السعودي (SAR)</option>
+                <option value="EUR">اليورو (EUR)</option>
+                <option value="AED">الدرهم الإماراتي (AED)</option>
+                <option value="GBP">الجنيه الإسترليني (GBP)</option>
+                <option value="TRY">الليرة التركية (TRY)</option>
+                <option value="MYR">الرينغيت الماليزي (MYR)</option>
+                <option value="EGP">الجنيه المصري (EGP)</option>
+            </select>
+            <button type="button" class="swap-button" id="swap" aria-label="تبديل العملات">⇄</button>
+            <select id="to-currency">
+                <option value="SAR">الريال السعودي (SAR)</option>
+                <option value="USD">الدولار الأمريكي (USD)</option>
+                <option value="EUR">اليورو (EUR)</option>
+                <option value="AED">الدرهم الإماراتي (AED)</option>
+                <option value="GBP">الجنيه الإسترليني (GBP)</option>
+                <option value="TRY">الليرة التركية (TRY)</option>
+                <option value="MYR">الرينغيت الماليزي (MYR)</option>
+                <option value="EGP">الجنيه المصري (EGP)</option>
+            </select>
+            <p id="loading" role="status">جارٍ تحميل أسعار الصرف...</p>
+            <p id="error" role="alert" hidden></p>
+            <button type="button" id="retry" hidden>إعادة المحاولة</button>
+            <div class="result" id="result" aria-live="polite"></div>
+            <div class="quick-buttons">
+                <button class="quick-amount" data-amount="10">10</button>
+                <button class="quick-amount" data-amount="50">50</button>
+                <button class="quick-amount" data-amount="100">100</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>عمل عباس ال الشيخ</p>
+        <p>أسعار الوحدة: <span id="unit-price"></span></p>
+        <p>تاريخ آخر تحديث: <span id="last-update"></span></p>
+        <p>تحديث يومي، وليست لحظية. <a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a></p>
+        <p>التحويل تقديري، وقد يختلف سعر البنك أو الصرافة وتُضاف رسوم.</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
